@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import Player from './components/Player';
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -16,16 +17,22 @@ function App() {
         console.error(error)
       });
   }
+  console.log(songs[0].name);  
+
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
   useEffect(() => {
     getSongs();
   }, [])
 
-    
 
     return (
       <div className="App">
-        App
+        <Player 
+        song={songs[currentSongIndex]} 
+        nextSong={songs[nextSongIndex]}
+      />
       </div>
     );
   
