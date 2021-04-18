@@ -1,8 +1,10 @@
 import {useState, useEffect} from 'react';
-import Player from './components/Player';
+import Player from './components/Player/Player';
+import Playlist from './components/Playlist/Playlist';
 
 function App() {
   const [songs, setSongs] = useState([]);
+  const [isPlaylistVisible, setListVisibility] = useState(false);
   
   const  getSongs = () => {
     fetch('https://api-stg.jam-community.com/song/trending')
@@ -35,13 +37,17 @@ function App() {
   console.log(currentSongIndex);
   console.log(nextSongIndex);
     return (
-      <div className="App">
-        <Player 
-        currentSongIndex={currentSongIndex} 
-        setCurrentSongIndex={setCurrentSongIndex} 
-        nextSongIndex={nextSongIndex} 
-        songs={songs}
-      />
+      <div className="App"> {
+        isPlaylistVisible ? 
+          <Playlist setListVisibility={setListVisibility} setCurrentSongIndex={setCurrentSongIndex}  songs={songs}/> : 
+          <Player 
+            setListVisibility={setListVisibility}
+            currentSongIndex={currentSongIndex} 
+            setCurrentSongIndex={setCurrentSongIndex} 
+            nextSongIndex={nextSongIndex} 
+            songs={songs}
+          />
+      }
       </div>
     );
   

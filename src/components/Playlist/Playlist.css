@@ -1,0 +1,37 @@
+.c-player--playlist {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #313131;
+    margin: 0px auto;
+    cursor: pointer;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-player--playlist > ul {
+    display: flex;
+    border-radius: 12px;
+    padding: 0.8em;
+    width: 20em;
+}
+
+.c-player--playlist > ul > div {
+    display: flex;
+    align-items: center;
+    color: #EEE;
+    margin-left: 30px;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.c-player--playlist > ul > img {
+    display: block;
+    width: 3em;
+    max-width: 250px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), -6px -6px 12px rgba(255, 255, 255, 0.4);
+}
