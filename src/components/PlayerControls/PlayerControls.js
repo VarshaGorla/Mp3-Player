@@ -17,8 +17,7 @@ function PlayerControls(props) {
             }
         });
     }
-    let btn_class = like ? "unlikedButton" : "likedButton";
-    console.log(btn_class);
+    let btn_class = like ? "likedButton" : "unlikedButton";
     return (
         <div>
             <div className="c-player--controls">

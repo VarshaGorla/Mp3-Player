@@ -18,8 +18,6 @@ function App() {
         console.error(error)
       });
   }
-  console.log(songs);  
-
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
@@ -34,9 +32,7 @@ function App() {
     });
   }, [currentSongIndex])
 
-  console.log(currentSongIndex);
-  console.log(nextSongIndex);
-    return (
+  return (
       <div className="App"> {
         isPlaylistVisible ? 
           <Playlist setListVisibility={setListVisibility} setCurrentSongIndex={setCurrentSongIndex}  songs={songs}/> : 

@@ -5,7 +5,7 @@ function Playlist(props) {
     return (
         <div className="c-player--playlist">
             {props.songs?.map(song =>
-            <ul onClick={() => {props.setListVisibility(false);
+            <ul key={song.id} onClick={() => {props.setListVisibility(false);
                                 props.setCurrentSongIndex(props.songs?.indexOf(song))}
                         }>
                 <img src={song.cover_image_path} alt="" />

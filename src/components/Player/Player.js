@@ -44,7 +44,7 @@ function Player(props) {
 
     return (
         <div className="c-player" id="outer-container">
-            <Sidebar isPlaylistVisible={props.isPlaylistVisible} setListVisibility={props.setListVisibility} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+            <Sidebar isPlaylistVisible={props.isPlaylistVisible} setListVisibility={props.setListVisibility} outerContainerId={'outer-container'} />
             <audio src={props.songs[props.currentSongIndex]?.music_file_path} ref={audioEl}></audio>
             <h4>Playing now</h4>
             <PlayerDetails song={props.songs[props.currentSongIndex]} />
