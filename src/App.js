@@ -17,7 +17,7 @@ function App() {
         console.error(error)
       });
   }
-  console.log(songs[0].name);  
+  console.log(songs[0]?.name);  
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);

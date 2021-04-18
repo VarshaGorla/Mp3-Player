@@ -4,20 +4,25 @@ import { faPlay, faPause, faForward, faBackward, faHeart } from '@fortawesome/fr
 
 function PlayerControls(props) {
     return (
-        <div className="c-player--controls">
-            <button className="skip-btn">
-                <FontAwesomeIcon icon={faBackward} />
-            </button>
-            <button className="play-btn">
-                <FontAwesomeIcon icon={props.isPlaying ? faPause : faPlay} />
-            </button>
-            <button className="skip-btn">
-                <FontAwesomeIcon icon={faForward} />
-            </button>
-            <button className="skip-btn">
-                <FontAwesomeIcon icon={faHeart} />
-            </button>
+        <div>
+            <div className="c-player--controls">
+                <button className="like-btn">
+                    <FontAwesomeIcon icon={faHeart} />
+                </button>
+            </div>
+            <div className="c-player--controls">
+                <button className="skip-btn">
+                    <FontAwesomeIcon icon={faBackward} />
+                </button>
+                <button className="play-btn">
+                    <FontAwesomeIcon icon={props.isPlaying ? faPause : faPlay} />
+                </button>
+                <button className="skip-btn">
+                    <FontAwesomeIcon icon={faForward} />
+                </button>  
         </div>
+        </div>
+        
     )
 }
 
