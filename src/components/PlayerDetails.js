@@ -6,7 +6,7 @@ function PlayerDetails(props) {
             <div className="details-img">
                 <img src={props.song?.cover_image_path} alt="" />
             </div>
-            <h3 className="details-title">{props.song?.name}</h3>
+            <p className="details-title"> {props.song?.name}  </p>         
             <h4 className="details-artist">{props.song?.artist_name}</h4>
         </div>
     )

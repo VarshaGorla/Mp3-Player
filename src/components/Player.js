@@ -41,6 +41,7 @@ function Player(props) {
             });
         }
     }
+
     return (
         <div className="c-player">
             <audio src={props.songs[props.currentSongIndex]?.music_file_path} ref={audioEl}></audio>
@@ -50,7 +51,10 @@ function Player(props) {
             <h4>Playing now</h4>
             <PlayerDetails song={props.songs[props.currentSongIndex]} />
             <PlayerControls isPlaying={isPlaying} setIsPlaying={setIsPlaying} SkipSong={SkipSong}/>
-            <p>Next up: <span>{props.songs[props.nextSongIndex]?.song_info} by {props.songs[props.nextSongIndex]?.artist_name}</span></p>        </div>
+            <p>
+                <marquee>Next up: <span>{props.songs[props.nextSongIndex]?.name} by {props.songs[props.nextSongIndex]?.artist_name}</span></marquee>
+            </p>        
+        </div>
     )
 }
 

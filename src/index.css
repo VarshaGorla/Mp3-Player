@@ -39,6 +39,9 @@ body {
   font-size: 14px;
   text-align: center;
   font-weight: 600;
+  overflow: hidden;
+  width: 350px;
+  white-space: nowrap;
 }
 
 .c-player > p span {
@@ -74,10 +77,14 @@ body {
 
 .c-player--details .details-title {
   color: #EEE;
-  font-size: 28px;
+  width: 20em;
+  font-size: 18px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
   text-align: center;
   margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: marquee 4s linear infinite;
 }
 
 .c-player--details .details-artist {

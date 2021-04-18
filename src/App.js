@@ -9,7 +9,6 @@ function App() {
       .then(response => response.json())
       .then((jsonData) => {
         // jsonData is parsed json object received from url
-        console.log(jsonData)
         setSongs(() => jsonData);
       })
       .catch((error) => {
@@ -17,37 +16,24 @@ function App() {
         console.error(error)
       });
   }
+  console.log(songs);  
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
   useEffect(() => {
-    const  getSongs = () => {
-      fetch('https://api-stg.jam-community.com/song/trending')
-        .then(response => response.json())
-        .then((jsonData) => {
-          // jsonData is parsed json object received from url
-          console.log(jsonData)
-          setSongs(() => jsonData);
-        })
-        .catch((error) => {
-          // handle your errors here
-          console.error(error)
-        });
-    }
-  
     getSongs();
     setNextSongIndex(() => {
-      if (currentSongIndex + 1 > songs.length - 1) {
+      if (currentSongIndex + 1 > songs?.length - 1) {
         return 0;
       } else {
         return currentSongIndex + 1;
       }
     });
   }, [currentSongIndex])
-  console.log(songs[0]?.name);  
 
-
+  console.log(currentSongIndex);
+  console.log(nextSongIndex);
     return (
       <div className="App">
         <Player 
